@@ -1,0 +1,30 @@
+#!/bin/bash
+# Find all HTML files in the current working directory
+
+for file in *.html; do
+
+  # Check if the file exists in the parent directory
+
+  if [ -e ../$file ]; then
+
+    # If the file exists, compare the timestamps
+
+    # If the file in the current directory is newer than the one in the parent directory
+
+    if [ $file -nt ../$file ]; then
+
+      # Copy the file to the parent directory
+
+      cp $file ../$file
+
+    fi
+
+  else
+
+    # If the file does not exist in the parent directory, copy it
+
+    cp $file ../$file
+
+  fi
+
+done
