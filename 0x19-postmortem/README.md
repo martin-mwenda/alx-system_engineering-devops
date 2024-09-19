@@ -1,3 +1,5 @@
+Postmortem: When Our API Took a Nap 🛌💻
+
 Issue Summary:
 
 Duration: The outage lasted for 3 hours, from 11:00 AM to 2:00 PM UTC on September 15, 2024.
@@ -7,7 +9,7 @@ Users reported timeouts and slow response times when attempting to load data.
 Root Cause: The root cause was a memory leak in the API service that overloaded the application servers, leading to unhandled out-of-memory (OOM) errors.
 
 Timeline:
-11:00 AM UTC: Monitoring system alerts the team to a significant increase in response times for the API.
+11:00 AM UTC: 🚨 Alert! Monitoring system alerts the team to a significant increase in response times for the API.
 11:05 AM UTC: Engineer on call investigates API server logs and identifies slow queries.
 11:20 AM UTC: Initial hypothesis is that the database is under heavy load due to large data queries.
 11:40 AM UTC: Database and network load checks are normal; issue persists. Memory usage on API servers is noticed to be unusually high.
@@ -34,9 +36,9 @@ Performance testing: Implement routine load testing on large datasets to simulat
 
 Task List:
 
-Patch the genetic risk assessment module to prevent memory leaks.
-Add memory usage alerts to the monitoring system.
-Refactor code to improve memory efficiency across other API services.
+Patch the genetic risk assessment module to prevent memory leaks. 🛠️
+Add memory usage alerts to the monitoring system 🕵️
+Refactor code to improve memory efficiency across other API services 💪
 Conduct bi-weekly load testing with real data sets to identify weaknesses.
 Update incident response documentation for quicker resolution times in the future.
 
