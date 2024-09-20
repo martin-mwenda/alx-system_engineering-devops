@@ -9,8 +9,8 @@ import sys
 if __name__ == "__main__":
     user_id = sys.argv[1]
 
-    # Fetch user data
-    user = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(user_id))
+    user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
+            .format(user_id))
     name = user.json().get('name')
 
     # Fetch todos data
@@ -31,5 +31,4 @@ if __name__ == "__main__":
 
     # Print titles of completed tasks
     print('\n'.join(["\t " + task.get('title') for task in todos.json()
-                     if task.get('userId') == int(user_id) and task.get('completed')]))
-
+        if task.get('userId') == int(user_id) and task.get('completed')]))
