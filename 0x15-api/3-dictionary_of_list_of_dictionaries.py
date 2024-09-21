@@ -26,13 +26,11 @@ if __name__ == '__main__':
 
         # Get the list of tasks
         tasks = response.json()
-        
         # Store tasks for the user in a dictionary
         users_tasks[user_id] = []
         for task in tasks:
             task_completed = task.get('completed')
             task_title = task.get('title')
-            
             # Append task details to the user's task list
             users_tasks[user_id].append({
                 "task": task_title,
@@ -43,4 +41,3 @@ if __name__ == '__main__':
     # Write the collected data to a JSON file
     with open('todo_all_employees.json', 'w') as f:
         json.dump(users_tasks, f)
-
