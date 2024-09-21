@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Script to interact with a REST API and retrieve TODO lists for a given employee"""
+"""Script to interact with a REST API and retrieve
+TODO lists for a given employee"""
 
 import requests
 import sys
@@ -14,7 +15,7 @@ if __name__ == '__main__':
 
     # Get the employee's details from the API
     response = requests.get(user_url)
-    username = response.json().get('username')  # Extract username from the JSON response
+    username = response.json().get('username')
 
     # Get the employee's todo list from the API
     todos_url = user_url + "/todos"
@@ -26,5 +27,4 @@ if __name__ == '__main__':
         for task in todos:
             file.write('"{}","{}","{}","{}"\n'
                        .format(employee_id, username, task.get('completed'),
-                               task.get('title')))  # Write each task's details in CSV format
-
+                               task.get('title')))
