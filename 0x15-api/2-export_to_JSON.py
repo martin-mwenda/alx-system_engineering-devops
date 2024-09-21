@@ -39,11 +39,15 @@ if __name__ == "__main__":
             tasks_list.append(task_dict)
 
 
-    final_data = {}
-    final_data[employee_id] = tasks_list
+
+            final_data = {}
+            final_data[employee_id] = tasks_list
 
 
-    json_output = json.dumps(final_data)
+            json_output = json.dumps(final_data)
 
-    with open(argv[1] + ".json", "w") as file:
-        file.write(json_output)
+
+            with open(argv[1] + ".json", "w") as file:
+
+
+                file.write(json_output)
