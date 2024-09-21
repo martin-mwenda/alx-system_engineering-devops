@@ -14,8 +14,6 @@ if __name__ == "__main__":
     todos_data = todos_response.json()
 
     tasks_list = []
-
-
     users_response = get('https://jsonplaceholder.typicode.com/users')
     users_data = users_response.json()
 
