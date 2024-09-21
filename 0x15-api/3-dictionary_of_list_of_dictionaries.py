@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""A Python script that fetches data from a REST API for employee todo lists."""
+"""A Python script that fetches data from a REST API
+for employee todo lists."""
 
 import json
 import requests
@@ -20,8 +21,6 @@ if __name__ == '__main__':
     for user in users:
         user_id = user.get('id')
         username = user.get('username')
-        
-        # Construct URL to fetch tasks for each user
         todos_url = '{}/todos/'.format(base_url + '/' + str(user_id))
         response = requests.get(todos_url)
 
