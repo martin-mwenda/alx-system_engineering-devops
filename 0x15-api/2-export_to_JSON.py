@@ -14,8 +14,8 @@ if __name__ == "__main__":
     todos_data = todos_response.json()
 
     tasks_list = []
-    
-    # Fetch all user data from the API
+
+
     users_response = get('https://jsonplaceholder.typicode.com/users')
     users_data = users_response.json()
 
@@ -38,13 +38,12 @@ if __name__ == "__main__":
             task_dict['completed'] = task['completed']
             tasks_list.append(task_dict)
 
-    # Create the final dictionary with employee ID as key and task list as value
+
     final_data = {}
     final_data[employee_id] = tasks_list
-    
-    # Convert dictionary to JSON format
+
+
     json_output = json.dumps(final_data)
 
     with open(argv[1] + ".json", "w") as file:
         file.write(json_output)
-
