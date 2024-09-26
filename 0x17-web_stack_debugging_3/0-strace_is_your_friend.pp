@@ -1,10 +1,15 @@
-# A puppet manuscript to replace a line in a file on a server
-
-$file_to_edit = '/var/www/html/wp-settings.php'
-
-#replace line containing "phpp" with "php"
-
-exec { 'replace_line':
-  command => "sed -i 's/phpp/php/g' ${file_to_edit}",
-  path    => ['/bin','/usr/bin']
+file { '/etc/apache2/sites-enabled/000-default.conf':
+  ensure  => present,
+  source  => 'puppet:///modules/apache/000-default.conf',
+  mode    => '0644',
+  owner   => 'root',
+  group   => 'root',
+  require => Package['apache2'],
 }
+
+service { 'apache2':
+  ensure     => running,
+  enable     => true,
+  subscribe  => File['/etc/apache2/sites-enabled/000-default.conf'],
+}
+
