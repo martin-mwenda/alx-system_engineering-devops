@@ -15,9 +15,14 @@ def number_of_subscribers(subreddit):
     
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
-        if response.status_code == 200:
+
+        # Check for status code 200 (valid subreddit) and ensure it's JSON data
+        if response.status_code == 200 and response.headers['Content-Type'].startswith('application/json'):
             data = response.json()
             return data.get("data", {}).get("subscribers", 0)
+
+        # Return 0 for invalid subreddit or any other error
         return 0
+    
     except requests.RequestException:
         return 0
