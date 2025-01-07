@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Get all active IPv4 addresses
+ip addr show | grep "inet\b" | awk '{print $2}' | cut -d/ -f1
