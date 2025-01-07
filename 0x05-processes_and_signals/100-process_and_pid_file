@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Process and PID file
-#+  receiving a SIGQUIT or SIGTERM.
 
 echo $$ > /var/run/holbertonscript.pid
 trap "echo 'Y U no love me?!'" SIGINT
