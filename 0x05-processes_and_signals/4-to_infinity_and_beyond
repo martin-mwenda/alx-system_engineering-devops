@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Repeats the phrase "To infinity and beyond" indefinitely
-# with a 2-second pause between each repetition.
+# Displays "To infinity and beyond" indefinitely with
+#+ a sleep 2 in between each iteration.
 
 while true
 do
