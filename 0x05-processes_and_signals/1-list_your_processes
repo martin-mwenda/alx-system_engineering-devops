@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
+# Shell script that list all currently running processes
 
-# Display all processes, including those without a TTY, in a user-oriented format
-# Show the process hierarchy
-
-ps -auxf
+ps auxf
