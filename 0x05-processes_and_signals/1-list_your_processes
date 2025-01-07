@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
-ps -auxf
+# Display all processes, including those without a TTY, in a user-oriented format
+# Show the process hierarchy
+
+# Use 'ps' with options:
+# -e : Select all processes
+# -f : Full-format listing
+# --forest : Display process hierarchy
+ps -ef --forest
